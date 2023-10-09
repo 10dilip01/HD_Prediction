@@ -3,8 +3,8 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
-# Load the Random Forest CLassifier model
-filename = 'heart-disease-prediction-knn-model.pkl'
+
+filename = 'heart-disease-prediction-model.pkl'
 model = pickle.load(open(filename, 'rb'))
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ def home():
 	return render_template('main.html')
 
 
-@app.route('/predict', methods=['GET','POST'])
+@app.route('/prediction', methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
 
