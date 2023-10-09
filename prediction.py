@@ -13,7 +13,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 
 
-# loading and reading the dataset
+# Uploading the Dataset
 
 heart = pd.read_csv("heart_cleveland_Upload.csv")
 
@@ -24,7 +24,7 @@ heart_df = heart.copy()
 heart_df = heart_df.rename(columns={'condition':'target'})
 print(heart_df.head())
 
-# model building 
+# Creating Model 
 
 #fixing our data in x and y. Here y contains target data and X contains rest all the features.
 x= heart_df.drop(columns= 'target')
@@ -35,8 +35,8 @@ x_train, x_test, y_train, y_test= train_test_split(x, y, test_size= 0.25, random
 
 #feature scaling
 scaler= StandardScaler()
-x_train_scaler= scaler.fit_transform(x_train)
-x_test_scaler= scaler.fit_transform(x_test)
+x_train_scaler= scaler.fit_Transform(x_train)
+x_test_scaler= scaler.fit_Transform(x_test)
 
 # creating K-Nearest-Neighbor classifier
 model=RandomForestClassifier(n_estimators=20)
