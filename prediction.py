@@ -15,12 +15,12 @@ from sklearn.tree import DecisionTreeClassifier
 
 # loading and reading the dataset
 
-heart = pd.read_csv("heart_cleveland_upload.csv")
+heart = pd.read_csv("heart_cleveland_Upload.csv")
 
-# creating a copy of dataset so that will not affect our original dataset.
+
 heart_df = heart.copy()
 
-# Renaming some of the columns 
+# Renaming some of the columns
 heart_df = heart_df.rename(columns={'condition':'target'})
 print(heart_df.head())
 
@@ -45,7 +45,7 @@ y_pred= model.predict(x_test_scaler)
 p = model.score(x_test_scaler,y_test)
 print(p)
 
-print('Classification Report\n', classification_report(y_test, y_pred))
+print('Classification report\n', classification_report(y_test, y_pred))
 print('Accuracy: {}%\n'.format(round((accuracy_score(y_test, y_pred)*100),2)))
 
 cm = confusion_matrix(y_test, y_pred)
